@@ -1,0 +1,19 @@
+{
+  "name": "meetgdev-web",
+  "version": "1.0.0",
+  "description": "Portfolio personal de gdev — Fullstack Developer & Systems Architect.",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./dist/styles.css --minify",
+    "watch": "tailwindcss -i ./src/input.css -o ./dist/styles.css --watch",
+    "serve": "npx http-server . -p 4173 -c-1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
+

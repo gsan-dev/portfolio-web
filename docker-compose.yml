@@ -1,0 +1,8 @@
+services:
+  meetgdev-web:
+    build: .
+    image: meetgdev-web:latest
+    container_name: meetgdev-web
+    restart: unless-stopped
+    ports:
+      - "2323:80"

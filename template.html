@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed-variant": "#2f2ebe", "on-primary": "#1d00a5", "outline": "#918fa1", "on-tertiary-fixed": "#001e2c", "on-surface": "#e2e2e8", "on-error-container": "#ffdad6", "inverse-surface": "#e2e2e8", "tertiary-fixed-dim": "#7bd0ff", "secondary-fixed-dim": "#c0c1ff", "on-tertiary-container": "#b2e1ff", "inverse-on-surface": "#2f3035", "on-tertiary-fixed-variant": "#004c69", "surface-bright": "#37393e", "on-error": "#690005", "surface-container-low": "#1a1c20", "on-surface-variant": "#c7c4d8", "on-background": "#e2e2e8", "surface-container-lowest": "#0c0e12", "on-primary-fixed": "#0f0069", "primary": "#c3c0ff", "inverse-primary": "#4d44e3", "surface-container-highest": "#333539", "on-secondary-fixed": "#07006c", "tertiary-fixed": "#c4e7ff", "surface": "#111318", "background": "#111318", "outline-variant": "#464555", "error-container": "#93000a", "primary-fixed-dim": "#c3c0ff", "primary-container": "#4f46e5", "secondary-fixed": "#e1e0ff", "surface-container-high": "#282a2e", "on-secondary": "#1000a9", "surface-dim": "#111318", "surface-variant": "#333539", "primary-fixed": "#e2dfff", "surface-container": "#1e2024", "on-primary-container": "#dad7ff", "surface-tint": "#c3c0ff", "on-primary-fixed-variant": "#3323cc", "secondary": "#c0c1ff", "secondary-container": "#3131c0", "on-secondary-container": "#b0b2ff", "tertiary": "#7bd0ff", "error": "#ffb4ab", "tertiary-container": "#00678c", "on-tertiary": "#00354a" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-3xl": "6rem", "space-xl": "2.5rem", "space-md": "1rem", "margin": "2rem", "space-xs": "0.25rem", "gutter-sm": "1rem", "margin-mobile": "1.25rem", "gutter": "1.5rem", "margin-desktop": "3rem", "space-sm": "0.5rem", "space-2xl": "4rem", "space-lg": "1.5rem" }, "fontFamily": { "headline-sm": [ "Geist" ], "headline-lg-mobile": [ "Geist" ], "headline-lg": [ "Geist" ], "body-lg": [ "Geist" ], "body-md": [ "Geist" ], "display-hero-mobile": [ "Geist" ], "display-hero": [ "Geist" ], "body-sm": [ "Geist" ], "headline-md": [ "Geist" ], "mono-badge": [ "JetBrains Mono" ], "mono-metric": [ "JetBrains Mono" ] }, "fontSize": { "headline-sm": [ "18px", { "lineHeight": "26px", "letterSpacing": "-0.015em", "fontWeight": "500" } ], "headline-lg-mobile": [ "26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.025em", "fontWeight": "600" } ], "body-lg": [ "17px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "body-md": [ "15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" } ], "display-hero-mobile": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" } ], "display-hero": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.035em", "fontWeight": "600" } ], "body-sm": [ "13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-md": [ "22px", { "lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "500" } ], "mono-badge": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" } ], "mono-metric": [ "14px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500" } ] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="h-16 max-w-[1120px] mx-auto px-margin-mobile lg:px-margin-desktop flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md"><img alt="gdev Monogram Wordmark" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1UUXn6NAssxqiYVRWq9nwSdOTYbPt9i7PnRiVivfEAyRNT6lVY14oMLGpx6iuLTsK5yojyd8LviHHqGPZYa7Mf6DKhJvXKpEMWRfbLqSRbZNzoeCbIcTohI03pJYH46Mg-Sv_TyPbYJXI0mATFlOtt6jub6Uddz-0mf6MuwSD7qCun8OiT3kDN1k0u5crZecWZ6AiTDM4H46t_7zE0cXFLCudvdJZ4jvl_oLweNrdy8H5LU-yoqxJrw"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">gdev</span><span class="font-mono-badge text-mono-badge text-on-surface-variant uppercase tracking-wider">Architect / SRE</span></div></div><nav class="hidden lg:flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-on-surface font-medium rounded-lg"><a class="px-space-sm py-space-xs font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg" data-path="sobre-mi" href="#">Sobre mí</a><a class="px-space-sm py-space-xs font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg" data-path="proyectos" href="#">Proyectos</a><a class="px-space-sm py-space-xs font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg" data-path="homelab-stack" href="#">Homelab &amp; Stack</a><a class="px-space-sm py-space-xs font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg" data-path="experiencia" href="#">Experiencia</a><a class="px-space-sm py-space-xs font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg" data-path="contacto" href="#">Contacto</a></nav><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span></span><span class="font-mono-badge text-mono-badge text-tertiary uppercase tracking-wider">Disponible</span></div><a class="inline-flex items-center justify-center px-space-md py-space-xs font-body-sm text-body-sm font-medium text-on-primary-container bg-primary-container hover:bg-inverse-primary rounded-xl transition-colors shadow-sm" data-path="contacto" href="#">Hablemos</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-16rem)]"><div class="flex flex-col w-full">
+<!-- Subtle Ambient Glow Background -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[360px] bg-gradient-to-tr from-primary-container/15 via-tertiary-container/10 to-transparent blur-[120px] pointer-events-none rounded-full"></div>
+<!-- Hero Section -->
+<section class="max-w-[1120px] mx-auto px-margin-mobile lg:px-margin-desktop pt-space-2xl pb-space-3xl relative">
+<div class="flex flex-col items-start max-w-3xl">
+<!-- Micro-badge Tag -->
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-high text-on-surface-variant mb-space-lg shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-mono-badge text-mono-badge uppercase tracking-wider text-primary">Fullstack Developer &amp; Systems Architect</span>
+</div>
+<!-- Hero Headline -->
+<h1 class="font-display-hero text-display-hero text-on-surface tracking-tight mb-space-md">
+          Construyendo software de punta a punta, desde la interfaz de usuario hasta la infraestructura bare-metal.
+        </h1>
+<!-- Subtitle Paragraph -->
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-space-xl leading-relaxed">
+          Soy <span class="text-on-surface font-medium">gdev</span>, desarrollador fullstack con más de 6 años diseñando aplicaciones web escalables, arquitecturas cloud-native y manteniendo un cluster homelab para experimentación continua y autosuficiencia técnica.
+        </p>
+<!-- CTA Action Group -->
+<div class="flex flex-wrap items-center gap-space-md mb-space-3xl">
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm bg-primary-container text-on-primary-container hover:bg-inverse-primary rounded-xl font-body-md text-body-md font-medium transition-all shadow-md active:scale-95" href="#proyectos">
+<span>Explorar proyectos</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm bg-surface-container-high text-on-surface hover:bg-surface-bright rounded-xl font-body-md text-body-md font-medium transition-all shadow-sm active:scale-95" href="#homelab">
+<span class="material-symbols-outlined text-[18px] text-tertiary">dns</span>
+<span>Ver arquitectura Homelab</span>
+</a>
+</div>
+<!-- Metrics Strip -->
+<div class="w-full grid grid-cols-2 md:grid-cols-4 gap-gutter py-space-lg px-space-lg bg-surface-container-low rounded-xl shadow-sm">
+<div class="flex flex-col gap-0.5">
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight">+6 años</span>
+<span class="font-mono-badge text-mono-badge text-outline uppercase tracking-wider">Experiencia</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-md text-headline-md text-tertiary tracking-tight">99.98%</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+</div>
+<span class="font-mono-badge text-mono-badge text-outline uppercase tracking-wider">Uptime Personal</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight">18+ Prod</span>
+<span class="font-mono-badge text-mono-badge text-outline uppercase tracking-wider">Proyectos desplegados</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-headline-md text-headline-md text-primary tracking-tight">Fullstack</span>
+<span class="font-mono-badge text-mono-badge text-outline uppercase tracking-wider">&amp; Self-hosted</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Engineering Philosophy / About -->
+<section class="w-full bg-surface-container-lowest py-space-3xl">
+<div class="max-w-[1120px] mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-start">
+<!-- Left Pillar Header -->
+<div class="lg:col-span-5 flex flex-col gap-space-md sticky top-24">
+<div class="inline-flex items-center gap-space-xs text-primary font-mono-badge text-mono-badge uppercase tracking-widest">
+<span class="material-symbols-outlined text-[16px]">architecture</span>
+<span>Filosofía de Ingeniería</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+            Diseño riguroso, observabilidad total y control de la infraestructura.
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Concibo el desarrollo no como líneas aisladas de frontend o backend, sino como un sistema vivo continuo. Un pixel milimétrico carece de valor si la latencia de base de datos se degrada, o si la orquestación subyacente colapsa ante picos imprevistos.
+          </p>
+<!-- Core Tenets Checklist -->
+<div class="flex flex-col gap-space-sm pt-space-sm">
+<div class="flex items-center gap-space-sm text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-[20px]">check_circle</span>
+<span>Código modular, tipado estricto y mantenibilidad a largo plazo.</span>
+</div>
+<div class="flex items-center gap-space-sm text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-[20px]">check_circle</span>
+<span>Micro-optimización de renderizado e interfaces accesibles y rápidas.</span>
+</div>
+<div class="flex items-center gap-space-sm text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-[20px]">check_circle</span>
+<span>Automatización declarativa GitOps y recuperación ante desastres probada.</span>
+</div>
+</div>
+</div>
+<!-- Right Pillars Grid -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Pillar Card 1: Frontend -->
+<div class="group p-space-xl rounded-xl bg-surface-container-low hover:bg-surface-container transition-all shadow-sm">
+<div class="flex items-start justify-between gap-space-md mb-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">desktop_windows</span>
+</div>
+<span class="font-mono-badge text-mono-badge px-space-xs py-0.5 rounded bg-surface-container text-outline uppercase">Dominio Client-Side</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs font-semibold">Frontend Moderno &amp; Design Systems</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+              Desarrollo de SPAs y arquitecturas Server-Driven con React, Next.js y Tailwind CSS. Foco absoluto en rendimiento de render, Core Web Vitals y component libraries ultra-consistentes con accesibilidad de grado empresarial.
+            </p>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">Next.js 14</span>
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">TypeScript</span>
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">TailwindCSS</span>
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">State Machines</span>
+</div>
+</div>
+<!-- Pillar Card 2: Backend -->
+<div class="group p-space-xl rounded-xl bg-surface-container-low hover:bg-surface-container transition-all shadow-sm">
+<div class="flex items-start justify-between gap-space-md mb-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
+<span class="material-symbols-outlined text-[22px]">database</span>
+</div>
+<span class="font-mono-badge text-mono-badge px-space-xs py-0.5 rounded bg-surface-container text-outline uppercase">Dominio Server-Side</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs font-semibold">Backend, Microservicios &amp; APIs</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+              Servicios distribuidos de alta concurrencia en Go y Node.js. Modelado relacional y transaccional con PostgreSQL, colas asíncronas con Redis/RabbitMQ, y APIs resilientes con contratos estrictos GraphQL y gRPC.
+            </p>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">Golang</span>
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">Node.js / Bun</span>
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">PostgreSQL</span>
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">Redis</span>
+</div>
+</div>
+<!-- Pillar Card 3: Systems & Homelab -->
+<div class="group p-space-xl rounded-xl bg-surface-container-low hover:bg-surface-container transition-all shadow-sm">
+<div class="flex items-start justify-between gap-space-md mb-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-[22px]">developer_board</span>
+</div>
+<span class="font-mono-badge text-mono-badge px-space-xs py-0.5 rounded bg-surface-container text-outline uppercase">Infra &amp; SRE</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs font-semibold">Sistemas, Virtualización &amp; Homelab</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+              Virtualización bare-metal sobre Proxmox VE, clusters k3s gestionados con GitOps, almacenamiento redundante con ZFS y enrutamiento perimetral con Traefik, Cloudflare Tunnels y túneles mallados WireGuard.
+            </p>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">Kubernetes (k3s)</span>
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">Proxmox VE</span>
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">ArgoCD</span>
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">ZFS Storage</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Curated Works / Projects Section -->
+<section class="w-full py-space-3xl relative" id="proyectos">
+<div class="max-w-[1120px] mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-2xl">
+<div>
+<div class="inline-flex items-center gap-space-xs text-primary font-mono-badge text-mono-badge uppercase tracking-widest mb-space-xs">
+<span class="material-symbols-outlined text-[16px]">folder_special</span>
+<span>Trabajos Seleccionados</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Proyectos de producción &amp; arquitecturas reales</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">
+          Sistemas concebidos con énfasis en escalabilidad vertical/horizontal, redundancia y pulido visual sin concesiones.
+        </p>
+</div>
+<!-- Projects Stack -->
+<div class="flex flex-col gap-space-2xl">
+<!-- Project 1: Nexus Cloud Platform -->
+<article class="p-space-lg lg:p-space-xl rounded-xl bg-surface-container-low shadow-sm flex flex-col lg:flex-row gap-space-xl items-center">
+<div class="w-full lg:w-1/2 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-surface-container-high text-tertiary">SaaS B2B Multi-tenant</span>
+<span class="text-outline font-mono-badge text-mono-badge">•</span>
+<span class="text-on-surface-variant font-mono-badge text-mono-badge">2024</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-space-sm">Nexus Cloud Platform</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg leading-relaxed">
+                Plataforma de orquestación multi-inquilino que sincroniza estados distribuidos en tiempo real. Gestiona provisionamiento automatizado de entornos para equipos de ingeniería con aislamiento estricto a nivel de base de datos.
+              </p>
+<!-- Metrics in project -->
+<div class="grid grid-cols-2 gap-space-sm p-space-sm bg-surface-container rounded-lg mb-space-lg">
+<div>
+<span class="font-mono-metric text-mono-metric text-on-surface font-semibold block">&lt; 45ms</span>
+<span class="font-mono-badge text-mono-badge text-outline">Latencia p95 global</span>
+</div>
+<div>
+<span class="font-mono-metric text-mono-metric text-on-surface font-semibold block">120k req/min</span>
+<span class="font-mono-badge text-mono-badge text-outline">Carga sostenida</span>
+</div>
+</div>
+<!-- Tech tags -->
+<div class="flex flex-wrap gap-1.5 mb-space-lg">
+<span class="px-2 py-1 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">Go microservices</span>
+<span class="px-2 py-1 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">Next.js App Router</span>
+<span class="px-2 py-1 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">PostgreSQL Row-level Sec</span>
+<span class="px-2 py-1 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">Redis Pub/Sub</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md pt-space-xs">
+<a class="inline-flex items-center gap-1 font-body-sm text-body-sm text-primary hover:text-on-primary-container transition-colors font-medium" href="#">
+<span>Ver caso técnico</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<span class="text-outline">·</span>
+<a class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+<span>Demo en vivo</span>
+</a>
+</div>
+</div>
+<div class="w-full lg:w-1/2 aspect-video rounded-lg overflow-hidden bg-surface-container relative shadow-inner">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist dark-mode software interface of a cloud platform dashboard with sleek typography, subdued indigo accents, real-time node connection charts, and clean metric cards on a deep slate background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrM_WHT0-Ow4S6bTkZeS9nD8ItUujkJMns0S3fWWch1iBrucylnOhn7hf7RQjGuvHY48dpmiSsA_knSxWGZQOGSLjLzwuCstZPfzY59RcCeXM6aXtdW4K32GAHfrDW1QiwuiFjB8t8jFKszI596d7_mEdd4XV5aL21ChyWmgKGG_O8SgOig5x9w0Qo4x6tHoPSE_4M7XfhdeiaME_KmMnBfLNbkTwzkRkPKGXR8RPsi3ss3TLnYdFEXg"/>
+</div>
+</article>
+<!-- Project 2: Aura Design & Analytics -->
+<article class="p-space-lg lg:p-space-xl rounded-xl bg-surface-container-low shadow-sm flex flex-col lg:flex-row-reverse gap-space-xl items-center">
+<div class="w-full lg:w-1/2 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-surface-container-high text-primary">Data Visualization Engine</span>
+<span class="text-outline font-mono-badge text-mono-badge">•</span>
+<span class="text-on-surface-variant font-mono-badge text-mono-badge">2023 - 2024</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-space-sm">Aura Analytics &amp; Telemetry</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg leading-relaxed">
+                Dashboard analítico de telemetría de alto rendimiento capaz de procesar millones de eventos por segundo mediante WebGL y canvas virtualizado sin saturar el hilo de ejecución del navegador.
+              </p>
+<!-- Metrics in project -->
+<div class="grid grid-cols-2 gap-space-sm p-space-sm bg-surface-container rounded-lg mb-space-lg">
+<div>
+<span class="font-mono-metric text-mono-metric text-on-surface font-semibold block">60 FPS</span>
+<span class="font-mono-badge text-mono-badge text-outline">Render a 50k puntos</span>
+</div>
+<div>
+<span class="font-mono-metric text-mono-metric text-on-surface font-semibold block">0 deps pesadas</span>
+<span class="font-mono-badge text-mono-badge text-outline">Canvas nativo optimizado</span>
+</div>
+</div>
+<!-- Tech tags -->
+<div class="flex flex-wrap gap-1.5 mb-space-lg">
+<span class="px-2 py-1 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">TypeScript</span>
+<span class="px-2 py-1 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">HTML5 Canvas / WebGL</span>
+<span class="px-2 py-1 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">ClickHouse</span>
+<span class="px-2 py-1 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">TailwindCSS</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md pt-space-xs">
+<a class="inline-flex items-center gap-1 font-body-sm text-body-sm text-primary hover:text-on-primary-container transition-colors font-medium" href="#">
+<span>Ver caso técnico</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<span class="text-outline">·</span>
+<a class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]">code</span>
+<span>Repositorio</span>
+</a>
+</div>
+</div>
+<div class="w-full lg:w-1/2 aspect-video rounded-lg overflow-hidden bg-surface-container relative shadow-inner">
+<img class="w-full h-full object-cover" data-alt="A sophisticated data analytics dashboard UI rendered in high-contrast dark tones, featuring subtle monochrome line graphs, fine telemetry sparklines, and precise typographic gauges with electric cyan data points." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkOuP49bHgX8EOG_MgCkM8fYzho9qN4REzcNHuvjSHfrlMDytH3RTw0QGJ7RL2NmUn4HegIb3MWCwLzxyGA7faCTIxv4wsTzT6vdsOs9nybAL54kKB7MHRPXYWjtPJXBhu-EWUhUCVBRwy9ilpDUlMBCF8WLScp3wz42cNFFR0VR_m87Xgd80sTpNybJ8pk49UhiGRY94pX_JiYWFgwdtwizQPsnMMm68Hr1QlRYF5nXjc9BxFX_WncQ"/>
+</div>
+</article>
+<!-- Project 3: KubeMesh Home Infra -->
+<article class="p-space-lg lg:p-space-xl rounded-xl bg-surface-container-low shadow-sm flex flex-col lg:flex-row gap-space-xl items-center">
+<div class="w-full lg:w-1/2 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-surface-container-high text-secondary">GitOps Infrastructure</span>
+<span class="text-outline font-mono-badge text-mono-badge">•</span>
+<span class="text-on-surface-variant font-mono-badge text-mono-badge">Activo</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-space-sm">KubeMesh Home Infra</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg leading-relaxed">
+                Plataforma de orquestación personal gestionada íntegramente como código (IaC). Despliegues automáticos vía ArgoCD ante push en Git, balanceo perimetral Anycast simulado y certificados mTLS automáticos.
+              </p>
+<!-- Metrics in project -->
+<div class="grid grid-cols-2 gap-space-sm p-space-sm bg-surface-container rounded-lg mb-space-lg">
+<div>
+<span class="font-mono-metric text-mono-metric text-on-surface font-semibold block">100% IaC</span>
+<span class="font-mono-badge text-mono-badge text-outline">Declarativo via Git</span>
+</div>
+<div>
+<span class="font-mono-metric text-mono-metric text-on-surface font-semibold block">Automated DNS</span>
+<span class="font-mono-badge text-mono-badge text-outline">Zero config ingress</span>
+</div>
+</div>
+<!-- Tech tags -->
+<div class="flex flex-wrap gap-1.5 mb-space-lg">
+<span class="px-2 py-1 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">ArgoCD</span>
+<span class="px-2 py-1 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">Traefik Ingress</span>
+<span class="px-2 py-1 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">Prometheus &amp; Grafana</span>
+<span class="px-2 py-1 rounded text-mono-badge font-mono-badge bg-surface-container text-on-surface-variant">K3s Kubernetes</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md pt-space-xs">
+<a class="inline-flex items-center gap-1 font-body-sm text-body-sm text-primary hover:text-on-primary-container transition-colors font-medium" href="#homelab">
+<span>Ver diagrama completo</span>
+<span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+</a>
+</div>
+</div>
+<div class="w-full lg:w-1/2 aspect-video rounded-lg overflow-hidden bg-surface-container relative shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Architectural technical blueprint of a Kubernetes cluster infrastructure, showing clean node topologies, ingress routing arrows, storage pools, and network nodes in ultra-clean dark schematic aesthetic with slate and indigo lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKprDKirq5G4pOphe0j-gSZ50GBv44rS6It7NzzBP-U98FzXbiiC0dXTYLJpJVHeQtsoyl1GkPy8HlBvPW483d9KU9R2WIDgysQYjXGWCBWlCbQV3eRG2dWym2oykT75koV0_tfd_ND9NqLk-g65ufhppsO0VBJTd4iNVoWsO68zic-q4GmZRcMUiddfIMFMcgIstO5U2SVqLZLNgI9DWhBcfKjZbfOXk3mwDRX69mPktmt4DPg2E2cg"/>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Homelab & Production Infrastructure Section -->
+<section class="w-full bg-surface-container-lowest py-space-3xl relative" id="homelab">
+<div class="max-w-[1120px] mx-auto px-margin-mobile lg:px-margin-desktop">
+<!-- Section Intro -->
+<div class="flex flex-col max-w-2xl mb-space-2xl">
+<div class="inline-flex items-center gap-space-xs text-tertiary font-mono-badge text-mono-badge uppercase tracking-widest mb-space-xs">
+<span class="material-symbols-outlined text-[16px]">hub</span>
+<span>Arquitectura Bare-Metal</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-space-xs">
+          Homelab de Grado de Producción
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          No es un laboratorio casual ni un juguete casero: es mi entorno de staging y servicios permanentes, diseñado bajo estándares estrictos de SRE de alta disponibilidad, aislamiento de red y redundancia física.
+        </p>
+</div>
+<!-- Homelab Architecture Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl">
+<!-- Module 1: Compute -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="material-symbols-outlined text-primary text-[28px]">memory</span>
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-surface-container text-tertiary">ONLINE</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-xs">Computación Bare-Metal</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Nodo Proxmox VE con virtualización KVM y contenedores LXC de bajísimo overhead.
+            </p>
+</div>
+<div class="space-y-2 pt-space-sm">
+<div class="flex justify-between font-mono-badge text-mono-badge">
+<span class="text-outline">CPU</span>
+<span class="text-on-surface font-medium">AMD Ryzen 9 7900X (24T)</span>
+</div>
+<div class="flex justify-between font-mono-badge text-mono-badge">
+<span class="text-outline">MEMORIA</span>
+<span class="text-on-surface font-medium">128 GB ECC DDR5</span>
+</div>
+<div class="flex justify-between font-mono-badge text-mono-badge">
+<span class="text-outline">HYPERVISOR</span>
+<span class="text-on-surface font-medium">Proxmox VE 8.2</span>
+</div>
+</div>
+</div>
+<!-- Module 2: Storage -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="material-symbols-outlined text-tertiary text-[28px]">hard_drive</span>
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-surface-container text-tertiary">HEALTHY</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-xs">Almacenamiento ZFS</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              TrueNAS CORE con pools ZFS espejo y caché NVMe para I/O ultra veloz con snapshots periódicos.
+            </p>
+</div>
+<div class="space-y-2 pt-space-sm">
+<div class="flex justify-between font-mono-badge text-mono-badge">
+<span class="text-outline">CAPACIDAD</span>
+<span class="text-on-surface font-medium">32 TB RAW (RAID-Z2)</span>
+</div>
+<div class="flex justify-between font-mono-badge text-mono-badge">
+<span class="text-outline">L2ARC</span>
+<span class="text-on-surface font-medium">2x 1TB Samsung 990 Pro</span>
+</div>
+<div class="flex justify-between font-mono-badge text-mono-badge">
+<span class="text-outline">PROTOCOLOS</span>
+<span class="text-on-surface font-medium">NFS, SMB, iSCSI</span>
+</div>
+</div>
+</div>
+<!-- Module 3: Networking -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="material-symbols-outlined text-secondary text-[28px]">router</span>
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-surface-container text-primary">ISOLATED</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-xs">Red &amp; Seguridad</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Firewall OPNsense virtualizado con segmentación estricta mediante 6 VLANs aisladas e IDS/IPS Suricata.
+            </p>
+</div>
+<div class="space-y-2 pt-space-sm">
+<div class="flex justify-between font-mono-badge text-mono-badge">
+<span class="text-outline">ROUTING</span>
+<span class="text-on-surface font-medium">OPNsense 10Gbps SFP+</span>
+</div>
+<div class="flex justify-between font-mono-badge text-mono-badge">
+<span class="text-outline">VPN MESH</span>
+<span class="text-on-surface font-medium">WireGuard + Headscale</span>
+</div>
+<div class="flex justify-between font-mono-badge text-mono-badge">
+<span class="text-outline">INGRESS</span>
+<span class="text-on-surface font-medium">Traefik + Cloudflare DNS</span>
+</div>
+</div>
+</div>
+<!-- Module 4: Observability & DR -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="material-symbols-outlined text-on-surface text-[28px]">monitoring</span>
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-surface-container text-tertiary">ACTIVE</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-xs">Observabilidad &amp; Backup</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Métricas en tiempo real con Prometheus y Grafana. Estrategia de backups 3-2-1 cifrada hacia S3 off-site.
+            </p>
+</div>
+<div class="space-y-2 pt-space-sm">
+<div class="flex justify-between font-mono-badge text-mono-badge">
+<span class="text-outline">MÉTRICAS</span>
+<span class="text-on-surface font-medium">Prometheus + Loki</span>
+</div>
+<div class="flex justify-between font-mono-badge text-mono-badge">
+<span class="text-outline">BACKUP 3-2-1</span>
+<span class="text-on-surface font-medium">Proxmox Backup + B2</span>
+</div>
+<div class="flex justify-between font-mono-badge text-mono-badge">
+<span class="text-outline">ALERTS</span>
+<span class="text-on-surface font-medium">PagerDuty + Discord Bot</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Infrastructure Status Banner -->
+<div class="p-space-lg rounded-xl bg-surface-container flex flex-col md:flex-row items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-3 h-3 rounded-full bg-tertiary animate-ping"></div>
+<div>
+<h4 class="font-body-md text-body-md text-on-surface font-medium">Todos los nodos locales y servicios GitOps se encuentran operacionales</h4>
+<p class="font-mono-badge text-mono-badge text-outline">Latencia interna: 0.12ms • Certificados SSL renovados • 0 incidentes reportados este ciclo</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-mono-badge text-mono-badge px-space-sm py-1 rounded bg-surface-container-high text-on-surface">CLUSTER: HEL1-HOME-LAB</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Terminal/Tech Stack Explorer -->
+<section class="w-full py-space-3xl">
+<div class="max-w-[1120px] mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<div class="inline-flex items-center gap-space-xs text-primary font-mono-badge text-mono-badge uppercase tracking-widest">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+<span>Versatilidad Técnica</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+            Un toolkit forjado en desafíos reales de producción.
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            No elijo tecnologías por moda pasajera. Cada herramienta en mi repertorio responde a criterios probados de predictibilidad, tiempo de respuesta y coste de mantenimiento.
+          </p>
+<div class="grid grid-cols-2 gap-space-md pt-space-xs">
+<div class="p-space-md rounded-lg bg-surface-container-low">
+<span class="font-mono-badge text-mono-badge text-tertiary block mb-1">FRONTEND &amp; UI</span>
+<span class="font-body-sm text-body-sm text-on-surface">React, Next.js, TypeScript, Tailwind, Zustand, Framer Motion</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low">
+<span class="font-mono-badge text-mono-badge text-primary block mb-1">BACKEND &amp; DATA</span>
+<span class="font-body-sm text-body-sm text-on-surface">Golang, Node.js, Express, PostgreSQL, Redis, ClickHouse</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low">
+<span class="font-mono-badge text-mono-badge text-secondary block mb-1">DEVOPS &amp; K8S</span>
+<span class="font-body-sm text-body-sm text-on-surface">Docker, k3s, ArgoCD, Helm, Traefik, GitHub Actions</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low">
+<span class="font-mono-badge text-mono-badge text-outline block mb-1">SYSADMIN &amp; SEC</span>
+<span class="font-body-sm text-body-sm text-on-surface">Linux (Debian/Arch), Proxmox, ZFS, WireGuard, OPNsense</span>
+</div>
+</div>
+</div>
+<!-- Visual Topology Card -->
+<div class="lg:col-span-6 p-space-xl rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+</div>
+<span class="font-mono-badge text-mono-badge text-outline">CLUSTER_TOPOLOGY_V2.JSON</span>
+</div>
+<div class="p-space-md bg-surface-container-lowest rounded-lg font-mono-badge text-mono-badge text-on-surface-variant overflow-x-auto leading-relaxed space-y-1">
+<div class="text-tertiary">{</div>
+<div class="pl-4"><span class="text-primary">"cluster"</span>: <span class="text-secondary">"gdev-baremetal-primary"</span>,</div>
+<div class="pl-4"><span class="text-primary">"orchestration"</span>: <span class="text-secondary">"k3s + ArgoCD GitOps"</span>,</div>
+<div class="pl-4"><span class="text-primary">"storage_tier"</span>: {</div>
+<div class="pl-8"><span class="text-primary">"pool"</span>: <span class="text-secondary">"tank0"</span>, <span class="text-primary">"filesystem"</span>: <span class="text-secondary">"zfs"</span>, <span class="text-primary">"redundancy"</span>: <span class="text-secondary">"raidz2"</span></div>
+<div class="pl-4">},</div>
+<div class="pl-4"><span class="text-primary">"networking"</span>: {</div>
+<div class="pl-8"><span class="text-primary">"overlay"</span>: <span class="text-secondary">"wireguard-mesh"</span>,</div>
+<div class="pl-8"><span class="text-primary">"edge"</span>: <span class="text-secondary">"Cloudflare Tunnels + Traefik"</span></div>
+<div class="pl-4">},</div>
+<div class="pl-4"><span class="text-primary">"sla_target"</span>: <span class="text-tertiary">0.9998</span></div>
+<div class="text-tertiary">}</div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-outline pt-space-xs">
+<span>Sincronización automática vía Git webhook</span>
+<span class="text-tertiary font-mono-badge text-mono-badge">REV: 4f8b1a</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section / Final CTA -->
+<section class="w-full bg-surface-container-lowest py-space-3xl relative" id="contacto">
+<div class="max-w-[1120px] mx-auto px-margin-mobile lg:px-margin-desktop">
+<div class="p-space-xl lg:p-space-2xl rounded-xl bg-surface-container-low shadow-lg relative overflow-hidden">
+<!-- Subtle Glow in Contact Card -->
+<div class="absolute -right-16 -top-16 w-80 h-80 bg-primary-container/20 blur-[90px] pointer-events-none rounded-full"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl relative">
+<!-- Left Pitch -->
+<div class="lg:col-span-6 flex flex-col justify-between">
+<div>
+<div class="inline-flex items-center gap-space-xs text-primary font-mono-badge text-mono-badge uppercase tracking-widest mb-space-xs">
+<span class="material-symbols-outlined text-[16px]">mark_email_read</span>
+<span>Contacto Directo</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-space-md">
+                Hablemos de tu próximo proyecto o reto técnico.
+              </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg leading-relaxed">
+                ¿Buscas un arquitecto fullstack que entienda la experiencia del cliente final pero que también sepa desplegar y asegurar los servidores donde vive el código? Estoy disponible para roles estratégicos, contratos senior y consultoría técnica.
+              </p>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">schedule</span>
+<span>Respuesta en menos de 24 horas garantizada.</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-tertiary text-[20px]">pin_drop</span>
+<span>Remoto global / Base en Europa (CET).</span>
+</div>
+</div>
+</div>
+<!-- Right Contact Form -->
+<div class="lg:col-span-6">
+<form class="flex flex-col gap-space-md" id="contact-form" onsubmit="event.preventDefault(); document.getElementById('form-feedback').classList.remove('hidden');">
+<div class="flex flex-col gap-1">
+<label class="font-mono-badge text-mono-badge uppercase tracking-wider text-outline" for="contact-name">Nombre o Empresa</label>
+<input class="px-space-md py-space-sm rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder-outline focus:outline-none focus:bg-surface-container-high transition-colors" id="contact-name" placeholder="p. ej. Sofía Martín / TechCorp" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-mono-badge text-mono-badge uppercase tracking-wider text-outline" for="contact-email">Email Corporativo</label>
+<input class="px-space-md py-space-sm rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder-outline focus:outline-none focus:bg-surface-container-high transition-colors" id="contact-email" placeholder="nombre@dominio.com" required="" type="email"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-mono-badge text-mono-badge uppercase tracking-wider text-outline" for="contact-topic">Tipo de Desafío</label>
+<select class="px-space-md py-space-sm rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-high transition-colors" id="contact-topic">
+<option value="arch">Arquitectura Fullstack / Construcción de Producto</option>
+<option value="infra">Modernización de Infraestructura / SRE</option>
+<option value="consulting">Auditoría técnica y optimización</option>
+<option value="other">Otro asunto profesional</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-mono-badge text-mono-badge uppercase tracking-wider text-outline" for="contact-message">Detalles del Proyecto</label>
+<textarea class="px-space-md py-space-sm rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder-outline focus:outline-none focus:bg-surface-container-high transition-colors resize-none" id="contact-message" placeholder="Describe brevemente tus objetivos, plazos y requerimientos..." required="" rows="3"></textarea>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<button class="inline-flex items-center gap-space-xs px-space-xl py-space-sm bg-primary-container hover:bg-inverse-primary text-on-primary-container rounded-xl font-body-md text-body-md font-medium transition-all shadow-md active:scale-95" type="submit">
+<span>Enviar mensaje directo</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+<a class="font-mono-badge text-mono-badge text-on-surface-variant hover:text-on-surface transition-colors underline underline-offset-4" href="mailto:hola@gdev.engineer">O copia: hola@gdev.engineer</a>
+</div>
+<div class="hidden p-space-sm bg-surface-container rounded-lg text-tertiary font-body-sm text-body-sm flex items-center gap-space-xs" id="form-feedback">
+<span class="material-symbols-outlined text-[18px]">check</span>
+<span>¡Mensaje recibido! Te responderé a la brevedad.</span>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-lowest"><div class="max-w-[1120px] mx-auto px-margin-mobile lg:px-margin-desktop py-space-xl flex flex-col md:flex-row items-center justify-between gap-space-lg"><div class="flex flex-col items-center md:items-start gap-space-xs"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface">gdev</span><span class="text-outline font-body-sm text-body-sm">·</span><span class="font-body-sm text-body-sm text-on-surface-variant">Fullstack &amp; Systems Engineer</span></div><p class="font-mono-badge text-mono-badge text-outline">© 2024 gdev. Arquitectura de software y homelab production-grade.</p></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container"><span class="h-1.5 w-1.5 rounded-full bg-tertiary"></span><span class="font-mono-badge text-mono-badge text-on-surface-variant">UPTIME 99.98% (NODE: HEL1-DC3)</span></div></div><div class="flex items-center gap-space-lg"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">GitHub</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">LinkedIn</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">X / Twitter</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Status</a></div></div></footer></body></html>

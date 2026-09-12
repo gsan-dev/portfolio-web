@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>gdev — Fullstack Developer &amp; Systems Architect</title>
+<meta name="description" content="gdev — desarrollador fullstack y arquitecto de sistemas. Interfaces, APIs e infraestructura propia (homelab) diseñadas con el mismo nivel de rigor." />
+<meta name="theme-color" content="#111318" />
+<meta name="color-scheme" content="dark" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="gdev — Fullstack Developer & Systems Architect" />
+<meta property="og:description" content="Interfaces, APIs e infraestructura propia diseñadas con el mismo nivel de rigor." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="gdev — Fullstack Developer & Systems Architect" />
+<meta name="twitter:description" content="Interfaces, APIs e infraestructura propia diseñadas con el mismo nivel de rigor." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="dist/styles.css" />
+</head>
+<body class="bg-surface font-sans text-body-md text-on-surface antialiased" id="top">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-3 focus:left-3 focus:px-space-md focus:py-space-sm focus:rounded-lg focus:bg-primary-container focus:text-on-primary-container focus:font-body-sm">Saltar al contenido</a>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="1"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></symbol>
+    <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1"/><line x1="9" y1="2" x2="9" y2="6"/><line x1="15" y1="2" x2="15" y2="6"/><line x1="9" y1="18" x2="9" y2="22"/><line x1="15" y1="18" x2="15" y2="22"/><line x1="2" y1="9" x2="6" y2="9"/><line x1="2" y1="15" x2="6" y2="15"/><line x1="18" y1="9" x2="22" y2="9"/><line x1="18" y1="15" x2="22" y2="15"/></symbol>
+    <symbol id="i-harddrive" viewBox="0 0 24 24"><line x1="2" y1="12" x2="22" y2="12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" y1="16" x2="6.01" y2="16"/><line x1="10" y1="16" x2="10.01" y2="16"/></symbol>
+    <symbol id="i-router" viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></symbol>
+    <symbol id="i-hub" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="19" r="2.2"/><circle cx="19" cy="19" r="2.2"/><line x1="12" y1="7.2" x2="6.3" y2="17.3"/><line x1="12" y1="7.2" x2="17.7" y2="17.3"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2 7 12 13 22 7"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><line x1="21" y1="3" x2="11" y2="13"/><polygon points="21 3 14.5 21 11 13 3 9.5 21 3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
+    <symbol id="i-branch" viewBox="0 0 24 24"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+  </defs>
+</svg>
+
+<header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/85 backdrop-blur-xl border-b border-surface-container-high">
+  <div class="h-16 max-w-content mx-auto px-margin-mobile lg:px-margin-desktop flex items-center justify-between gap-gutter">
+    <a href="#top" class="flex items-center gap-space-md">
+      <img src="assets/favicon.svg" alt="" width="32" height="32" class="h-8 w-8 rounded-md" />
+      <span class="flex flex-col leading-none">
+        <span class="font-sans text-headline-sm text-on-surface tracking-tight">gdev</span>
+        <span class="font-mono text-mono-badge text-on-surface-variant uppercase tracking-wider">Fullstack &amp; Systems</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-space-xs" aria-label="Navegación principal">
+      <a class="nav-link px-space-sm py-space-xs font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg" data-path="sobre-mi" href="#sobre-mi">Sobre mí</a>
+      <a class="nav-link px-space-sm py-space-xs font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg" data-path="proyectos" href="#proyectos">Proyectos</a>
+      <a class="nav-link px-space-sm py-space-xs font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg" data-path="homelab" href="#homelab">Homelab &amp; Stack</a>
+      <a class="nav-link px-space-sm py-space-xs font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg" data-path="experiencia" href="#experiencia">Cómo trabajo</a>
+      <a class="nav-link px-space-sm py-space-xs font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg" data-path="contacto" href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="flex items-center gap-space-md">
+      <div class="hidden lg:flex items-center gap-1 pr-space-sm border-r border-surface-container-high">
+        <a href="https://github.com/gsan-dev" target="_blank" rel="noopener noreferrer" aria-label="GitHub de gdev" class="flex items-center justify-center w-8 h-8 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">
+          <svg class="icon w-[18px] h-[18px]" aria-hidden="true"><use href="#i-github"></use></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/guillermosanchezdominguez/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de gdev" class="flex items-center justify-center w-8 h-8 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">
+          <svg class="icon w-[18px] h-[18px]" aria-hidden="true"><use href="#i-linkedin"></use></svg>
+        </a>
+      </div>
+      <div class="hidden sm:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+        </span>
+        <span class="font-mono text-mono-badge text-tertiary uppercase tracking-wider">Disponible</span>
+      </div>
+      <a class="hidden sm:inline-flex items-center justify-center px-space-md py-space-xs font-body-sm text-body-sm font-medium text-on-primary-container bg-primary-container hover:bg-inverse-primary rounded-lg transition-colors" href="#contacto">Hablemos</a>
+      <button id="menu-toggle" type="button" class="lg:hidden flex items-center justify-center w-9 h-9 rounded-lg text-on-surface hover:bg-surface-container-high transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+        <svg class="icon w-5 h-5" aria-hidden="true"><use href="#i-menu"></use></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-menu" class="lg:hidden hidden flex-col border-t border-surface-container-high bg-surface" aria-label="Navegación móvil">
+    <a class="nav-link px-margin-mobile py-space-md font-body-md text-body-md text-on-surface-variant border-b border-surface-container-high" data-path="sobre-mi" href="#sobre-mi">Sobre mí</a>
+    <a class="nav-link px-margin-mobile py-space-md font-body-md text-body-md text-on-surface-variant border-b border-surface-container-high" data-path="proyectos" href="#proyectos">Proyectos</a>
+    <a class="nav-link px-margin-mobile py-space-md font-body-md text-body-md text-on-surface-variant border-b border-surface-container-high" data-path="homelab" href="#homelab">Homelab &amp; Stack</a>
+    <a class="nav-link px-margin-mobile py-space-md font-body-md text-body-md text-on-surface-variant border-b border-surface-container-high" data-path="experiencia" href="#experiencia">Cómo trabajo</a>
+    <a class="nav-link px-margin-mobile py-space-md font-body-md text-body-md text-on-surface-variant border-b border-surface-container-high" data-path="contacto" href="#contacto">Contacto</a>
+    <div class="flex items-center gap-space-lg px-margin-mobile py-space-md">
+      <a href="https://github.com/gsan-dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+        <svg class="icon w-[18px] h-[18px]" aria-hidden="true"><use href="#i-github"></use></svg>
+        <span>GitHub</span>
+      </a>
+      <a href="https://www.linkedin.com/in/guillermosanchezdominguez/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+        <svg class="icon w-[18px] h-[18px]" aria-hidden="true"><use href="#i-linkedin"></use></svg>
+        <span>LinkedIn</span>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main id="main" class="w-full pt-16 bg-surface">
+
+  <!-- Hero -->
+  <div class="relative w-full overflow-hidden">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[360px] bg-gradient-to-tr from-primary-container/15 via-tertiary-container/10 to-transparent blur-[120px] pointer-events-none rounded-full"></div>
+    <section class="max-w-content mx-auto px-margin-mobile lg:px-margin-desktop pt-space-2xl pb-space-3xl relative">
+      <div class="flex flex-col items-start max-w-3xl">
+        <div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-high text-on-surface-variant mb-space-lg">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          <span class="font-mono text-mono-badge uppercase tracking-wider text-primary">Fullstack Developer &amp; Systems Architect</span>
+        </div>
+
+        <h1 class="font-sans text-display-hero-mobile lg:text-display-hero text-on-surface tracking-tight mb-space-md">
+          Construyo software end to end: interfaz, backend e infraestructura, con el mismo nivel de exigencia.
+        </h1>
+
+        <p class="font-sans text-body-lg text-on-surface-variant mb-space-xl leading-relaxed">
+          Soy <span class="text-on-surface font-medium">gdev</span>, desarrollador fullstack centrado en arquitecturas cloud-native, APIs resilientes y en mantener mi propia infraestructura self-hosted como terreno de práctica continua. Diseño sistemas pensados para durar, no solo para funcionar el día del lanzamiento.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-space-md mb-space-3xl">
+          <a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm bg-primary-container text-on-primary-container hover:bg-inverse-primary rounded-lg font-body-md text-body-md font-medium transition-all active:scale-95" href="#proyectos">
+            <span>Explorar proyectos</span>
+            <svg class="icon w-[18px] h-[18px]" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+          </a>
+          <a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm bg-surface-container-high text-on-surface hover:bg-surface-bright rounded-lg font-body-md text-body-md font-medium transition-all active:scale-95" href="#homelab">
+            <svg class="icon w-[18px] h-[18px] text-tertiary" aria-hidden="true"><use href="#i-hub"></use></svg>
+            <span>Ver arquitectura Homelab</span>
+          </a>
+        </div>
+
+        <div class="w-full grid grid-cols-2 md:grid-cols-4 gap-gutter py-space-lg px-space-lg bg-surface-container-low rounded-lg">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-sans text-headline-md text-on-surface tracking-tight">Frontend → Infra</span>
+            <span class="font-mono text-mono-badge text-outline uppercase tracking-wider">Cobertura end-to-end</span>
+          </div>
+          <div class="flex flex-col gap-0.5">
+            <span class="font-sans text-headline-md text-tertiary tracking-tight">Self-hosted</span>
+            <span class="font-mono text-mono-badge text-outline uppercase tracking-wider">Homelab propio</span>
+          </div>
+          <div class="flex flex-col gap-0.5">
+            <span class="font-sans text-headline-md text-on-surface tracking-tight">GitOps</span>
+            <span class="font-mono text-mono-badge text-outline uppercase tracking-wider">Despliegues declarativos</span>
+          </div>
+          <div class="flex flex-col gap-0.5">
+            <div class="flex items-center gap-1.5">
+              <span class="font-sans text-headline-md text-primary tracking-tight">Disponible</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+            </div>
+            <span class="font-mono text-mono-badge text-outline uppercase tracking-wider">Nuevos proyectos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Philosophy / About -->
+  <section class="w-full bg-surface-container-lowest py-space-3xl" id="sobre-mi">
+    <div class="max-w-content mx-auto px-margin-mobile lg:px-margin-desktop">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-start">
+        <div class="lg:col-span-5 flex flex-col gap-space-md lg:sticky lg:top-24">
+          <div class="inline-flex items-center gap-space-xs text-primary font-mono text-mono-badge uppercase tracking-widest">
+            <svg class="icon w-4 h-4" aria-hidden="true"><use href="#i-layers"></use></svg>
+            <span>Filosofía de Ingeniería</span>
+          </div>
+          <h2 class="font-sans text-headline-lg-mobile lg:text-headline-lg text-on-surface tracking-tight">
+            Diseño riguroso, observabilidad total y control de la infraestructura.
+          </h2>
+          <p class="font-sans text-body-md text-on-surface-variant leading-relaxed">
+            Entiendo el desarrollo no como líneas aisladas de frontend o backend, sino como un sistema vivo. Un pixel perfecto no vale nada si la base de datos se degrada bajo carga, o si la infraestructura que lo sostiene no puede recuperarse ante un fallo.
+          </p>
+          <div class="flex flex-col gap-space-sm pt-space-sm">
+            <div class="flex items-center gap-space-sm text-body-sm font-body-sm text-on-surface">
+              <svg class="icon w-5 h-5 text-tertiary shrink-0" aria-hidden="true"><use href="#i-check"></use></svg>
+              <span>Código modular, tipado estricto y mantenibilidad a largo plazo.</span>
+            </div>
+            <div class="flex items-center gap-space-sm text-body-sm font-body-sm text-on-surface">
+              <svg class="icon w-5 h-5 text-tertiary shrink-0" aria-hidden="true"><use href="#i-check"></use></svg>
+              <span>Interfaces accesibles, rápidas y cuidadas hasta el último detalle.</span>
+            </div>
+            <div class="flex items-center gap-space-sm text-body-sm font-body-sm text-on-surface">
+              <svg class="icon w-5 h-5 text-tertiary shrink-0" aria-hidden="true"><use href="#i-check"></use></svg>
+              <span>Automatización declarativa (GitOps) y planes de recuperación probados.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 flex flex-col gap-space-lg">
+          <div class="group p-space-xl rounded-lg bg-surface-container-low hover:bg-surface-container transition-all">
+            <div class="flex items-start justify-between gap-space-md mb-space-md">
+              <div class="w-10 h-10 rounded-md bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+                <svg class="icon w-[22px] h-[22px]" aria-hidden="true"><use href="#i-desktop"></use></svg>
+              </div>
+              <span class="font-mono text-mono-badge px-space-xs py-0.5 rounded bg-surface-container text-outline uppercase">Dominio Client-Side</span>
+            </div>
+            <h3 class="font-sans text-headline-sm text-on-surface mb-space-xs font-semibold">Frontend Moderno &amp; Design Systems</h3>
+            <p class="font-sans text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+              Interfaces y design systems con React, Next.js y Tailwind CSS. Prioridad en rendimiento de renderizado, accesibilidad y consistencia visual entre componentes.
+            </p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">Next.js</span>
+              <span class="px-2 py-0.5 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">TypeScript</span>
+              <span class="px-2 py-0.5 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">Tailwind CSS</span>
+              <span class="px-2 py-0.5 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">Design Systems</span>
+            </div>
+          </div>
+
+          <div class="group p-space-xl rounded-lg bg-surface-container-low hover:bg-surface-container transition-all">
+            <div class="flex items-start justify-between gap-space-md mb-space-md">
+              <div class="w-10 h-10 rounded-md bg-surface-container-high flex items-center justify-center text-tertiary group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
+                <svg class="icon w-[22px] h-[22px]" aria-hidden="true"><use href="#i-database"></use></svg>
+              </div>
+              <span class="font-mono text-mono-badge px-space-xs py-0.5 rounded bg-surface-container text-outline uppercase">Dominio Server-Side</span>
+            </div>
+            <h3 class="font-sans text-headline-sm text-on-surface mb-space-xs font-semibold">Backend, APIs &amp; Datos</h3>
+            <p class="font-sans text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+              Servicios y APIs en Go y Node.js. Modelado de datos en PostgreSQL, colas y caché con Redis, y contratos de API pensados para evolucionar sin romper a quien los consume.
+            </p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">Golang</span>
+              <span class="px-2 py-0.5 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">Node.js</span>
+              <span class="px-2 py-0.5 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">PostgreSQL</span>
+              <span class="px-2 py-0.5 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">Redis</span>
+            </div>
+          </div>
+
+          <div class="group p-space-xl rounded-lg bg-surface-container-low hover:bg-surface-container transition-all">
+            <div class="flex items-start justify-between gap-space-md mb-space-md">
+              <div class="w-10 h-10 rounded-md bg-surface-container-high flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+                <svg class="icon w-[22px] h-[22px]" aria-hidden="true"><use href="#i-cpu"></use></svg>
+              </div>
+              <span class="font-mono text-mono-badge px-space-xs py-0.5 rounded bg-surface-container text-outline uppercase">Infra &amp; SRE</span>
+            </div>
+            <h3 class="font-sans text-headline-sm text-on-surface mb-space-xs font-semibold">Sistemas, Virtualización &amp; Homelab</h3>
+            <p class="font-sans text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+              Virtualización con Proxmox VE, orquestación con k3s y GitOps, almacenamiento redundante con ZFS y una red perimetral pensada con el mismo rigor que un entorno de producción.
+            </p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">Kubernetes (k3s)</span>
+              <span class="px-2 py-0.5 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">Proxmox VE</span>
+              <span class="px-2 py-0.5 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">ArgoCD</span>
+              <span class="px-2 py-0.5 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">ZFS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="w-full py-space-3xl" id="proyectos">
+    <div class="max-w-content mx-auto px-margin-mobile lg:px-margin-desktop">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-2xl">
+        <div>
+          <div class="inline-flex items-center gap-space-xs text-primary font-mono text-mono-badge uppercase tracking-widest mb-space-xs">
+            <svg class="icon w-4 h-4" aria-hidden="true"><use href="#i-folder"></use></svg>
+            <span>Trabajos Seleccionados</span>
+          </div>
+          <h2 class="font-sans text-headline-lg-mobile lg:text-headline-lg text-on-surface tracking-tight">Proyectos personales y de exploración técnica</h2>
+        </div>
+        <p class="font-sans text-body-sm text-on-surface-variant max-w-sm">
+          Sistemas construidos para aprender de verdad: con la misma disciplina de escalabilidad, resiliencia y cuidado visual que exigiría un entorno real de producción.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-space-2xl">
+
+        <!-- Project 1 -->
+        <article class="p-space-lg lg:p-space-xl rounded-lg bg-surface-container-low flex flex-col lg:flex-row gap-space-xl items-center">
+          <div class="w-full lg:w-1/2 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-space-xs mb-space-xs flex-wrap">
+                <span class="px-2 py-0.5 rounded text-mono-badge font-mono bg-surface-container-high text-tertiary">SaaS multi-tenant</span>
+                <span class="text-outline font-mono text-mono-badge">•</span>
+                <span class="text-on-surface-variant font-mono text-mono-badge">En desarrollo</span>
+              </div>
+              <h3 class="font-sans text-headline-md text-on-surface font-semibold mb-space-sm">Nexus Cloud Platform</h3>
+              <p class="font-sans text-body-md text-on-surface-variant mb-space-lg leading-relaxed">
+                Plataforma de orquestación multi-inquilino para sincronizar estado entre equipos en tiempo real, con aprovisionamiento automatizado de entornos y aislamiento estricto de datos por inquilino.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-space-lg">
+                <span class="px-2 py-1 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">Go microservices</span>
+                <span class="px-2 py-1 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">Next.js App Router</span>
+                <span class="px-2 py-1 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">PostgreSQL RLS</span>
+                <span class="px-2 py-1 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">Redis Pub/Sub</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-space-md pt-space-xs">
+              <a class="inline-flex items-center gap-1 font-body-sm text-body-sm text-primary hover:text-on-primary-container transition-colors font-medium" href="#contacto">
+                <span>Ver caso técnico</span>
+                <svg class="icon w-4 h-4" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+              </a>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2 aspect-video rounded-lg overflow-hidden bg-surface-container-lowest border border-surface-container-high relative flex flex-col p-space-md gap-space-sm justify-center">
+            <div class="flex items-center gap-1.5 mb-space-xs">
+              <span class="w-2 h-2 rounded-full bg-outline-variant"></span><span class="w-2 h-2 rounded-full bg-outline-variant"></span><span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+            </div>
+            <div class="flex items-center justify-between p-space-sm rounded-md bg-surface-container">
+              <span class="font-mono text-mono-badge text-on-surface-variant">tenant_a.workspace</span>
+              <span class="font-mono text-mono-badge text-tertiary">sync</span>
+            </div>
+            <div class="flex items-center justify-between p-space-sm rounded-md bg-surface-container">
+              <span class="font-mono text-mono-badge text-on-surface-variant">tenant_b.workspace</span>
+              <span class="font-mono text-mono-badge text-tertiary">sync</span>
+            </div>
+            <div class="flex items-center justify-between p-space-sm rounded-md bg-surface-container-high">
+              <span class="font-mono text-mono-badge text-primary">provisioning...</span>
+              <span class="font-mono text-mono-badge text-outline">rls: strict</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="p-space-lg lg:p-space-xl rounded-lg bg-surface-container-low flex flex-col lg:flex-row-reverse gap-space-xl items-center">
+          <div class="w-full lg:w-1/2 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-space-xs mb-space-xs flex-wrap">
+                <span class="px-2 py-0.5 rounded text-mono-badge font-mono bg-surface-container-high text-primary">Visualización de datos</span>
+                <span class="text-outline font-mono text-mono-badge">•</span>
+                <span class="text-on-surface-variant font-mono text-mono-badge">Exploración técnica</span>
+              </div>
+              <h3 class="font-sans text-headline-md text-on-surface font-semibold mb-space-sm">Aura Analytics &amp; Telemetry</h3>
+              <p class="font-sans text-body-md text-on-surface-variant mb-space-lg leading-relaxed">
+                Panel de telemetría pensado para representar grandes volúmenes de eventos mediante Canvas y renderizado virtualizado, manteniendo la interfaz fluida sin bloquear el hilo principal.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-space-lg">
+                <span class="px-2 py-1 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">TypeScript</span>
+                <span class="px-2 py-1 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">HTML5 Canvas</span>
+                <span class="px-2 py-1 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">ClickHouse</span>
+                <span class="px-2 py-1 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">Tailwind CSS</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-space-md pt-space-xs">
+              <a class="inline-flex items-center gap-1 font-body-sm text-body-sm text-primary hover:text-on-primary-container transition-colors font-medium" href="#contacto">
+                <span>Ver caso técnico</span>
+                <svg class="icon w-4 h-4" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+              </a>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2 aspect-video rounded-lg overflow-hidden bg-surface-container-lowest border border-surface-container-high relative flex items-end p-space-md gap-1">
+            <div class="flex items-end gap-1 w-full h-2/3">
+              <div class="w-full bg-primary-container/60 rounded-t" style="height:35%"></div>
+              <div class="w-full bg-tertiary-container/60 rounded-t" style="height:60%"></div>
+              <div class="w-full bg-primary-container/60 rounded-t" style="height:45%"></div>
+              <div class="w-full bg-tertiary-container/60 rounded-t" style="height:80%"></div>
+              <div class="w-full bg-primary-container/60 rounded-t" style="height:55%"></div>
+              <div class="w-full bg-tertiary-container/60 rounded-t" style="height:70%"></div>
+              <div class="w-full bg-primary-container/60 rounded-t" style="height:40%"></div>
+              <div class="w-full bg-tertiary-container/60 rounded-t" style="height:90%"></div>
+              <div class="w-full bg-primary-container/60 rounded-t" style="height:50%"></div>
+              <div class="w-full bg-tertiary-container/60 rounded-t" style="height:65%"></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="p-space-lg lg:p-space-xl rounded-lg bg-surface-container-low flex flex-col lg:flex-row gap-space-xl items-center">
+          <div class="w-full lg:w-1/2 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-space-xs mb-space-xs flex-wrap">
+                <span class="px-2 py-0.5 rounded text-mono-badge font-mono bg-surface-container-high text-secondary">Infraestructura GitOps</span>
+                <span class="text-outline font-mono text-mono-badge">•</span>
+                <span class="text-on-surface-variant font-mono text-mono-badge">Activo</span>
+              </div>
+              <h3 class="font-sans text-headline-md text-on-surface font-semibold mb-space-sm">KubeMesh Home Infra</h3>
+              <p class="font-sans text-body-md text-on-surface-variant mb-space-lg leading-relaxed">
+                Mi propia plataforma de infraestructura, gestionada íntegramente como código. Despliegues automáticos con ArgoCD ante cada push, ingress con Traefik y certificados renovados automáticamente.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-space-lg">
+                <span class="px-2 py-1 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">ArgoCD</span>
+                <span class="px-2 py-1 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">Traefik</span>
+                <span class="px-2 py-1 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">Prometheus &amp; Grafana</span>
+                <span class="px-2 py-1 rounded text-mono-badge font-mono bg-surface-container text-on-surface-variant">K3s</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-space-md pt-space-xs">
+              <a class="inline-flex items-center gap-1 font-body-sm text-body-sm text-primary hover:text-on-primary-container transition-colors font-medium" href="#homelab">
+                <span>Ver arquitectura completa</span>
+                <svg class="icon w-4 h-4" aria-hidden="true"><use href="#i-arrow-down"></use></svg>
+              </a>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2 aspect-video rounded-lg overflow-hidden bg-surface-container-lowest border border-surface-container-high relative flex items-center justify-center p-space-md">
+            <svg class="w-full h-full text-outline-variant" viewBox="0 0 200 100" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+              <rect x="10" y="20" width="40" height="24" rx="2" stroke-opacity="0.8"/>
+              <rect x="80" y="10" width="40" height="24" rx="2" stroke-opacity="0.8"/>
+              <rect x="80" y="46" width="40" height="24" rx="2" stroke-opacity="0.8"/>
+              <rect x="150" y="20" width="40" height="24" rx="2" stroke-opacity="0.8"/>
+              <rect x="80" y="76" width="40" height="18" rx="2" stroke-opacity="0.8"/>
+              <path d="M50 32 H80" />
+              <path d="M120 22 H150 M120 58 H150" />
+              <path d="M100 34 V46 M100 70 V76" />
+            </svg>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Homelab -->
+  <section class="w-full bg-surface-container-lowest py-space-3xl" id="homelab">
+    <div class="max-w-content mx-auto px-margin-mobile lg:px-margin-desktop">
+      <div class="flex flex-col max-w-2xl mb-space-2xl">
+        <div class="inline-flex items-center gap-space-xs text-tertiary font-mono text-mono-badge uppercase tracking-widest mb-space-xs">
+          <svg class="icon w-4 h-4" aria-hidden="true"><use href="#i-hub"></use></svg>
+          <span>Arquitectura Bare-Metal</span>
+        </div>
+        <h2 class="font-sans text-headline-lg-mobile lg:text-headline-lg text-on-surface tracking-tight mb-space-xs">Homelab de nivel de producción</h2>
+        <p class="font-sans text-body-md text-on-surface-variant leading-relaxed">
+          No es un laboratorio de juguete: es mi entorno permanente de práctica, diseñado con los mismos estándares de disponibilidad, aislamiento de red y redundancia que exigiría un entorno productivo real.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl">
+        <div class="p-space-lg rounded-lg bg-surface-container-low flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-space-md">
+              <svg class="icon w-7 h-7 text-primary" aria-hidden="true"><use href="#i-cpu"></use></svg>
+              <span class="font-mono text-mono-badge px-1.5 py-0.5 rounded bg-surface-container text-tertiary">ONLINE</span>
+            </div>
+            <h3 class="font-sans text-headline-sm text-on-surface font-semibold mb-space-xs">Cómputo bare-metal</h3>
+            <p class="font-sans text-body-sm text-on-surface-variant mb-space-md">Proxmox VE con virtualización KVM y contenedores LXC de bajo overhead.</p>
+          </div>
+          <div class="space-y-2 pt-space-sm">
+            <div class="flex justify-between font-mono text-mono-badge"><span class="text-outline">CPU</span><span class="text-on-surface font-medium">AMD Ryzen 9</span></div>
+            <div class="flex justify-between font-mono text-mono-badge"><span class="text-outline">MEMORIA</span><span class="text-on-surface font-medium">ECC DDR5</span></div>
+            <div class="flex justify-between font-mono text-mono-badge"><span class="text-outline">HIPERVISOR</span><span class="text-on-surface font-medium">Proxmox VE</span></div>
+          </div>
+        </div>
+
+        <div class="p-space-lg rounded-lg bg-surface-container-low flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-space-md">
+              <svg class="icon w-7 h-7 text-tertiary" aria-hidden="true"><use href="#i-harddrive"></use></svg>
+              <span class="font-mono text-mono-badge px-1.5 py-0.5 rounded bg-surface-container text-tertiary">HEALTHY</span>
+            </div>
+            <h3 class="font-sans text-headline-sm text-on-surface font-semibold mb-space-xs">Almacenamiento ZFS</h3>
+            <p class="font-sans text-body-sm text-on-surface-variant mb-space-md">Pools ZFS en espejo con caché NVMe para I/O rápido y snapshots periódicos.</p>
+          </div>
+          <div class="space-y-2 pt-space-sm">
+            <div class="flex justify-between font-mono text-mono-badge"><span class="text-outline">REDUNDANCIA</span><span class="text-on-surface font-medium">RAID-Z2</span></div>
+            <div class="flex justify-between font-mono text-mono-badge"><span class="text-outline">CACHÉ</span><span class="text-on-surface font-medium">NVMe L2ARC</span></div>
+            <div class="flex justify-between font-mono text-mono-badge"><span class="text-outline">PROTOCOLOS</span><span class="text-on-surface font-medium">NFS, SMB, iSCSI</span></div>
+          </div>
+        </div>
+
+        <div class="p-space-lg rounded-lg bg-surface-container-low flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-space-md">
+              <svg class="icon w-7 h-7 text-secondary" aria-hidden="true"><use href="#i-router"></use></svg>
+              <span class="font-mono text-mono-badge px-1.5 py-0.5 rounded bg-surface-container text-primary">ISOLATED</span>
+            </div>
+            <h3 class="font-sans text-headline-sm text-on-surface font-semibold mb-space-xs">Red &amp; Seguridad</h3>
+            <p class="font-sans text-body-sm text-on-surface-variant mb-space-md">Firewall virtualizado con segmentación por VLANs y monitorización de tráfico.</p>
+          </div>
+          <div class="space-y-2 pt-space-sm">
+            <div class="flex justify-between font-mono text-mono-badge"><span class="text-outline">ROUTING</span><span class="text-on-surface font-medium">OPNsense</span></div>
+            <div class="flex justify-between font-mono text-mono-badge"><span class="text-outline">VPN MESH</span><span class="text-on-surface font-medium">WireGuard</span></div>
+            <div class="flex justify-between font-mono text-mono-badge"><span class="text-outline">INGRESS</span><span class="text-on-surface font-medium">Traefik + Cloudflare</span></div>
+          </div>
+        </div>
+
+        <div class="p-space-lg rounded-lg bg-surface-container-low flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-space-md">
+              <svg class="icon w-7 h-7 text-on-surface" aria-hidden="true"><use href="#i-activity"></use></svg>
+              <span class="font-mono text-mono-badge px-1.5 py-0.5 rounded bg-surface-container text-tertiary">ACTIVE</span>
+            </div>
+            <h3 class="font-sans text-headline-sm text-on-surface font-semibold mb-space-xs">Observabilidad &amp; Backup</h3>
+            <p class="font-sans text-body-sm text-on-surface-variant mb-space-md">Métricas en tiempo real con Prometheus y Grafana. Backups bajo la estrategia 3-2-1.</p>
+          </div>
+          <div class="space-y-2 pt-space-sm">
+            <div class="flex justify-between font-mono text-mono-badge"><span class="text-outline">MÉTRICAS</span><span class="text-on-surface font-medium">Prometheus + Loki</span></div>
+            <div class="flex justify-between font-mono text-mono-badge"><span class="text-outline">BACKUP 3-2-1</span><span class="text-on-surface font-medium">Proxmox Backup</span></div>
+            <div class="flex justify-between font-mono text-mono-badge"><span class="text-outline">ALERTAS</span><span class="text-on-surface font-medium">Notificaciones automáticas</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-space-lg rounded-lg bg-surface-container flex flex-col md:flex-row items-center justify-between gap-space-md">
+        <div class="flex items-center gap-space-md">
+          <div class="w-3 h-3 rounded-full bg-tertiary shrink-0"></div>
+          <div>
+            <h4 class="font-sans text-body-md text-on-surface font-medium">Diseñado para alta disponibilidad y recuperación ante fallos</h4>
+            <p class="font-mono text-mono-badge text-outline">Infraestructura como código · sincronización continua vía Git</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-space-sm">
+          <span class="font-mono text-mono-badge px-space-sm py-1 rounded bg-surface-container-high text-on-surface">REF: HOMELAB-GITOPS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stack -->
+  <section class="w-full py-space-3xl">
+    <div class="max-w-content mx-auto px-margin-mobile lg:px-margin-desktop">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+        <div class="lg:col-span-6 flex flex-col gap-space-md">
+          <div class="inline-flex items-center gap-space-xs text-primary font-mono text-mono-badge uppercase tracking-widest">
+            <svg class="icon w-4 h-4" aria-hidden="true"><use href="#i-terminal"></use></svg>
+            <span>Versatilidad Técnica</span>
+          </div>
+          <h2 class="font-sans text-headline-lg-mobile lg:text-headline-lg text-on-surface tracking-tight">Un stack forjado resolviendo problemas reales</h2>
+          <p class="font-sans text-body-md text-on-surface-variant leading-relaxed">
+            No elijo herramientas por moda: cada una responde a un criterio de estabilidad, velocidad de iteración y coste de mantenimiento a largo plazo.
+          </p>
+          <div class="grid grid-cols-2 gap-space-md pt-space-xs">
+            <div class="p-space-md rounded-md bg-surface-container-low">
+              <span class="font-mono text-mono-badge text-tertiary block mb-1">FRONTEND &amp; UI</span>
+              <span class="font-sans text-body-sm text-on-surface">React, Next.js, TypeScript, Tailwind, Zustand</span>
+            </div>
+            <div class="p-space-md rounded-md bg-surface-container-low">
+              <span class="font-mono text-mono-badge text-primary block mb-1">BACKEND &amp; DATOS</span>
+              <span class="font-sans text-body-sm text-on-surface">Go, Node.js, PostgreSQL, Redis, ClickHouse</span>
+            </div>
+            <div class="p-space-md rounded-md bg-surface-container-low">
+              <span class="font-mono text-mono-badge text-secondary block mb-1">DEVOPS &amp; K8S</span>
+              <span class="font-sans text-body-sm text-on-surface">Docker, k3s, ArgoCD, Helm, GitHub Actions</span>
+            </div>
+            <div class="p-space-md rounded-md bg-surface-container-low">
+              <span class="font-mono text-mono-badge text-outline block mb-1">SISTEMAS &amp; SEGURIDAD</span>
+              <span class="font-sans text-body-sm text-on-surface">Linux, Proxmox, ZFS, WireGuard, OPNsense</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 p-space-xl rounded-lg bg-surface-container-low flex flex-col gap-space-md">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-space-xs">
+              <span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+            </div>
+            <span class="font-mono text-mono-badge text-outline">cluster_topology.json</span>
+          </div>
+          <div class="p-space-md bg-surface-container-lowest rounded-md font-mono text-mono-badge text-on-surface-variant overflow-x-auto leading-relaxed space-y-1">
+            <div class="text-tertiary">{</div>
+            <div class="pl-4"><span class="text-primary">"cluster"</span>: <span class="text-secondary">"gdev-homelab-primary"</span>,</div>
+            <div class="pl-4"><span class="text-primary">"orchestration"</span>: <span class="text-secondary">"k3s + ArgoCD"</span>,</div>
+            <div class="pl-4"><span class="text-primary">"storage"</span>: {</div>
+            <div class="pl-8"><span class="text-primary">"pool"</span>: <span class="text-secondary">"tank0"</span>, <span class="text-primary">"fs"</span>: <span class="text-secondary">"zfs"</span>, <span class="text-primary">"redundancy"</span>: <span class="text-secondary">"raidz2"</span></div>
+            <div class="pl-4">},</div>
+            <div class="pl-4"><span class="text-primary">"networking"</span>: {</div>
+            <div class="pl-8"><span class="text-primary">"overlay"</span>: <span class="text-secondary">"wireguard-mesh"</span>,</div>
+            <div class="pl-8"><span class="text-primary">"edge"</span>: <span class="text-secondary">"traefik + cloudflare-tunnel"</span></div>
+            <div class="pl-4">},</div>
+            <div class="pl-4"><span class="text-primary">"philosophy"</span>: <span class="text-secondary">"infra-as-code"</span></div>
+            <div class="text-tertiary">}</div>
+          </div>
+          <div class="flex items-center justify-between text-body-sm font-sans text-outline pt-space-xs">
+            <span>Sincronizado automáticamente vía Git webhook</span>
+            <svg class="icon w-4 h-4 text-tertiary" aria-hidden="true"><use href="#i-branch"></use></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How I work -->
+  <section class="w-full bg-surface-container-lowest py-space-3xl" id="experiencia">
+    <div class="max-w-content mx-auto px-margin-mobile lg:px-margin-desktop">
+      <div class="flex flex-col max-w-2xl mb-space-2xl">
+        <div class="inline-flex items-center gap-space-xs text-primary font-mono text-mono-badge uppercase tracking-widest mb-space-xs">
+          <svg class="icon w-4 h-4" aria-hidden="true"><use href="#i-code"></use></svg>
+          <span>Forma de Trabajo</span>
+        </div>
+        <h2 class="font-sans text-headline-lg-mobile lg:text-headline-lg text-on-surface tracking-tight">Cómo encaro un proyecto, de principio a fin</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+        <div class="p-space-lg rounded-lg bg-surface-container-low flex flex-col gap-space-sm">
+          <span class="font-mono text-mono-badge text-outline">01</span>
+          <h3 class="font-sans text-headline-sm text-on-surface font-semibold">Arquitectura de producto</h3>
+          <p class="font-sans text-body-sm text-on-surface-variant leading-relaxed">Del diseño técnico al despliegue: defino arquitectura, modelo de datos y pipeline de entrega antes de escribir la primera línea de interfaz.</p>
+        </div>
+        <div class="p-space-lg rounded-lg bg-surface-container-low flex flex-col gap-space-sm">
+          <span class="font-mono text-mono-badge text-outline">02</span>
+          <h3 class="font-sans text-headline-sm text-on-surface font-semibold">Consultoría &amp; auditoría técnica</h3>
+          <p class="font-sans text-body-sm text-on-surface-variant leading-relaxed">Revisión de arquitecturas existentes, cuellos de botella de rendimiento y deuda de infraestructura, con recomendaciones accionables.</p>
+        </div>
+        <div class="p-space-lg rounded-lg bg-surface-container-low flex flex-col gap-space-sm">
+          <span class="font-mono text-mono-badge text-outline">03</span>
+          <h3 class="font-sans text-headline-sm text-on-surface font-semibold">Homelab como laboratorio</h3>
+          <p class="font-sans text-body-sm text-on-surface-variant leading-relaxed">Cada patrón de infraestructura que propongo lo pongo a prueba antes en mi propio entorno self-hosted.</p>
+        </div>
+        <div class="p-space-lg rounded-lg bg-surface-container-low flex flex-col gap-space-sm">
+          <span class="font-mono text-mono-badge text-outline">04</span>
+          <h3 class="font-sans text-headline-sm text-on-surface font-semibold">Remoto · Base en España (CET)</h3>
+          <p class="font-sans text-body-sm text-on-surface-variant leading-relaxed">Colaboro con equipos distribuidos, con solapamiento horario cómodo para Europa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="w-full py-space-3xl" id="contacto">
+    <div class="max-w-content mx-auto px-margin-mobile lg:px-margin-desktop">
+      <div class="p-space-xl lg:p-space-2xl rounded-lg bg-surface-container-low relative overflow-hidden">
+        <div class="absolute -right-16 -top-16 w-80 h-80 bg-primary-container/20 blur-[90px] pointer-events-none rounded-full"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl relative">
+          <div class="lg:col-span-6 flex flex-col justify-between">
+            <div>
+              <div class="inline-flex items-center gap-space-xs text-primary font-mono text-mono-badge uppercase tracking-widest mb-space-xs">
+                <svg class="icon w-4 h-4" aria-hidden="true"><use href="#i-mail"></use></svg>
+                <span>Contacto Directo</span>
+              </div>
+              <h2 class="font-sans text-headline-lg-mobile lg:text-headline-lg text-on-surface tracking-tight mb-space-md">Hablemos de tu próximo proyecto o reto técnico.</h2>
+              <p class="font-sans text-body-md text-on-surface-variant mb-space-lg leading-relaxed">
+                ¿Buscas a alguien que entienda tanto la experiencia final de usuario como la infraestructura que la sostiene? Estoy disponible para proyectos freelance, colaboraciones a medio plazo y consultoría técnica.
+              </p>
+            </div>
+            <div class="flex flex-col gap-space-sm">
+              <div class="flex items-center gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+                <svg class="icon w-5 h-5 text-primary" aria-hidden="true"><use href="#i-clock"></use></svg>
+                <span>Respuesta en menos de 48 horas.</span>
+              </div>
+              <div class="flex items-center gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+                <svg class="icon w-5 h-5 text-tertiary" aria-hidden="true"><use href="#i-pin"></use></svg>
+                <span>Remoto global · Base en España (CET).</span>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-space-sm pt-space-lg mt-space-lg border-t border-surface-container-high">
+              <span class="font-mono text-mono-badge uppercase tracking-wider text-outline">Redes sociales</span>
+              <div class="flex flex-wrap items-center gap-space-sm">
+                <a href="https://github.com/gsan-dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm">
+                  <svg class="icon w-[18px] h-[18px]" aria-hidden="true"><use href="#i-github"></use></svg>
+                  <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/guillermosanchezdominguez/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm">
+                  <svg class="icon w-[18px] h-[18px]" aria-hidden="true"><use href="#i-linkedin"></use></svg>
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6">
+            <form class="flex flex-col gap-space-md" id="contact-form" novalidate>
+              <div class="flex flex-col gap-1">
+                <label class="font-mono text-mono-badge uppercase tracking-wider text-outline" for="contact-name">Nombre o empresa</label>
+                <input class="px-space-md py-space-sm rounded-md bg-surface-container-lowest text-on-surface font-sans text-body-md placeholder-outline focus:outline-none focus:bg-surface-container-high transition-colors" id="contact-name" name="name" placeholder="p. ej. Sofía Martín / TechCorp" required type="text" />
+              </div>
+              <div class="flex flex-col gap-1">
+                <label class="font-mono text-mono-badge uppercase tracking-wider text-outline" for="contact-email">Tu email</label>
+                <input class="px-space-md py-space-sm rounded-md bg-surface-container-lowest text-on-surface font-sans text-body-md placeholder-outline focus:outline-none focus:bg-surface-container-high transition-colors" id="contact-email" name="email" placeholder="nombre@dominio.com" required type="email" />
+              </div>
+              <div class="flex flex-col gap-1">
+                <label class="font-mono text-mono-badge uppercase tracking-wider text-outline" for="contact-topic">Tipo de desafío</label>
+                <select class="px-space-md py-space-sm rounded-md bg-surface-container-lowest text-on-surface font-sans text-body-md focus:outline-none focus:bg-surface-container-high transition-colors" id="contact-topic" name="topic">
+                  <option value="arch">Arquitectura fullstack / construcción de producto</option>
+                  <option value="infra">Modernización de infraestructura / SRE</option>
+                  <option value="consulting">Auditoría técnica y optimización</option>
+                  <option value="other">Otro asunto profesional</option>
+                </select>
+              </div>
+              <div class="flex flex-col gap-1">
+                <label class="font-mono text-mono-badge uppercase tracking-wider text-outline" for="contact-message">Detalles del proyecto</label>
+                <textarea class="px-space-md py-space-sm rounded-md bg-surface-container-lowest text-on-surface font-sans text-body-md placeholder-outline focus:outline-none focus:bg-surface-container-high transition-colors resize-none" id="contact-message" name="message" placeholder="Describe brevemente tus objetivos, plazos y requerimientos..." required rows="3"></textarea>
+              </div>
+              <div class="flex flex-wrap items-center justify-between gap-space-md pt-space-xs">
+                <button class="inline-flex items-center gap-space-xs px-space-xl py-space-sm bg-primary-container hover:bg-inverse-primary text-on-primary-container rounded-lg font-body-md text-body-md font-medium transition-all active:scale-95" type="submit">
+                  <span>Abrir borrador de email</span>
+                  <svg class="icon w-[18px] h-[18px]" aria-hidden="true"><use href="#i-send"></use></svg>
+                </button>
+                <a class="font-mono text-mono-badge text-on-surface-variant hover:text-on-surface transition-colors underline underline-offset-4" href="mailto:gdev@outlook.es">O escribe a: gdev@outlook.es</a>
+              </div>
+              <p class="hidden p-space-sm bg-surface-container rounded-md text-tertiary font-body-sm text-body-sm items-center gap-space-xs" id="form-feedback">
+                <svg class="icon w-[18px] h-[18px]" aria-hidden="true"><use href="#i-check"></use></svg>
+                <span>Se ha abierto tu cliente de correo con el mensaje listo para enviar.</span>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="w-full bg-surface-container-lowest border-t border-surface-container-high">
+  <div class="max-w-content mx-auto px-margin-mobile lg:px-margin-desktop py-space-xl flex flex-col md:flex-row items-center justify-between gap-space-lg">
+    <div class="flex flex-col items-center md:items-start gap-space-xs">
+      <div class="flex items-center gap-space-sm">
+        <span class="font-sans text-headline-sm text-on-surface">gdev</span>
+        <span class="text-outline font-body-sm text-body-sm">·</span>
+        <span class="font-sans text-body-sm text-on-surface-variant">Fullstack &amp; Systems Engineer</span>
+      </div>
+      <p class="font-mono text-mono-badge text-outline">© <span id="year">2026</span> gdev. Diseño y desarrollo propios.</p>
+    </div>
+    <div class="flex items-center gap-space-lg">
+      <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="mailto:gdev@outlook.es">Email</a>
+      <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#top">Volver arriba</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
